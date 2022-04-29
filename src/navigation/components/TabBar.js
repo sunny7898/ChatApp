@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import {getHeight, getWidth} from '../../utils/dimensions';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
@@ -22,8 +22,11 @@ const TabBar = ({state, navigation}) => {
 
   return (
     <View style={styles.wrapper}>
-      <View style={{alignSelf: 'flex-start'}}>
+      <View style={styles.menuSection}>
         <Text style={styles.header}>Whatsapp</Text>
+        <TouchableOpacity>
+          <Icon name="ellipsis-v" size={18} color={'#FFF'} />
+        </TouchableOpacity>
       </View>
       <View style={styles.container}>
         <View>
@@ -59,12 +62,17 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+  menuSection: {
+    flexDirection: 'row',
+    width: getWidth(),
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: 10,
+  },
   header: {
     fontSize: 20,
     fontWeight: '500',
     color: '#e0f2f1',
-    marginHorizontal: 10,
-    marginTop: 15,
   },
   container: {
     width: getWidth(),
