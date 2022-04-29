@@ -13,28 +13,36 @@ const TabBar = ({state, navigation}) => {
   const renderSelection = currentTab =>
     currentTab === selected ? styles.isSelected : null;
 
+  const handlePress = (activeTab, index) => {
+    if (state.index !== index) {
+      setSelected(activeTab);
+      navigation.navigate(activeTab);
+    }
+  };
+
   return (
     <View style={styles.wrapper}>
       <View style={{alignSelf: 'flex-start'}}>
         <Text style={styles.header}>Whatsapp</Text>
       </View>
       <View style={styles.container}>
-        <View style={{backgroundColor: 'blue', marginRight: 10}}>
+        <View>
           <Icon
             name="camera"
             size={15}
             color={iconColor}
             onPress={() => {
               setIconColor('#1de9b6');
+              handlePress();
             }}
           />
         </View>
         <View style={styles.TabNavigationBox}>
-          {routes.map(route => (
+          {routes.map((route, index) => (
             <Tab
               tab={route}
               style={renderSelection(route.name)}
-              // onPress = {}
+              onPress={() => handlePress(route.name, index)}
               key={route.key}
             />
           ))}
@@ -62,17 +70,18 @@ const styles = StyleSheet.create({
     width: getWidth(),
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 10,
+    paddingLeft: 10,
   },
   TabNavigationBox: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginHorizontal: 10,
+    marginLeft: 20,
   },
   isSelected: {
     borderBottomWidth: 2,
     borderColor: '#1de9b6',
+    color: '#1de9b6',
   },
 });
 

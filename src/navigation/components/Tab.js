@@ -1,10 +1,15 @@
 import React from 'react';
 import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 
-const Tab = ({tab, icon, style, onPress}) => {
+const Tab = ({tab, style, onPress}) => {
   return (
-    <TouchableOpacity style = {[styles.container, style]}>
-      <Text style={{fontSize: 15, color: '#fff'}}>{tab.name}</Text>
+    <TouchableOpacity
+      style={[styles.container, style]}
+      onPress={onPress}
+      activeOpacity={0.5}>
+      <Text style={style ? {color: style.color} : styles.label}>
+        {tab.name}
+      </Text>
     </TouchableOpacity>
   );
 };
@@ -18,5 +23,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 10,
     paddingVertical: 5,
-  }
+  },
+  label: {
+    fontSize: 15,
+    color: '#FFFFFF',
+  },
 });
