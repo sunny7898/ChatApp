@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import { getHeight } from '../utils/dimensions';
+import { getHeight } from '../../utils/dimensions';
 const Header = () => {
   return (
     <View style={{height: getHeight() / 15, backgroundColor: '#00695c'}}>
