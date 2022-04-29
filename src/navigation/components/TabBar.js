@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
+import {getHeight} from '../../utils/dimensions';
 
 import Tab from './Tab';
 
@@ -22,7 +23,11 @@ const TabBar = ({state, navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  wrapper: {},
+  wrapper: {
+    height: getHeight() / 6,
+    backgroundColor: 'red',
+
+  },
   container: {},
 });
 
