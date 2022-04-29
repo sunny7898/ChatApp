@@ -9,11 +9,7 @@ const RootNavigation = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Main" component={HomeTabs} />
-      <Stack.Screen
-        name="Chat"
-        component={ChatScreen}
-        options={{headerShown: true}}
-      />
+      <Stack.Screen name="Chat" component={ChatScreen} />
     </Stack.Navigator>
   );
 };
