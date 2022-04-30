@@ -7,17 +7,21 @@ import {
   MenuOption,
   MenuTrigger,
 } from 'react-native-popup-menu';
+import {useNavigation} from '@react-navigation/native';
 
-export default MenuBar = ({data}) => {
+export default MenuBar = ({data, onSelect}) => {
+  const navigation = useNavigation();
   return (
     <Menu style={{position: 'absolute', right: 10}}>
       <MenuTrigger>
         <Icon name="ellipsis-v" color={'#FFF'} size={15} />
       </MenuTrigger>
       <MenuOptions style={{backgroundColor: '#004d40'}}>
-        {data.map(label => (
-          <MenuOption onSelect={() => alert(label)} key={label}>
-            <Text style={{color: '#fff'}}>{label}</Text>
+        {data.map(screen => (
+          <MenuOption
+            onSelect={() => navigation.navigate(screen.toNavigate)}
+            key={screen.toNavigate}>
+            <Text style={{color: '#fff'}}>{screen.label}</Text>
           </MenuOption>
         ))}
       </MenuOptions>

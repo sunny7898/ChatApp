@@ -27,11 +27,11 @@ const TabBar = ({state, navigation}) => {
         <Text style={styles.header}>Whatsapp</Text>
         <MenuBar
           data={[
-            'New group',
-            'New broadcast',
-            'Linked devices',
-            'Starred messages',
-            'Settings',
+            {label: 'New group', toNavigate: 'Group'},
+            {label: 'New broadcast', toNavigate: 'Broadcast'},
+            {label: 'Linked devices', toNavigate: 'Linked'},
+            {label: 'Starred messages', toNavigate: 'Starred'},
+            {label: 'Profile', toNavigate: 'Profile'},
           ]}
         />
       </View>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StatusBar} from 'react-native';
 import ChatCard from '../chat/component/ChatCard';
-const HomeScreen = () => {
+const HomeScreen = props => {
   return (
     <View>
       <View></View>
