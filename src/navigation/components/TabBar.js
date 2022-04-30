@@ -4,6 +4,7 @@ import {getHeight, getWidth} from '../../utils/dimensions';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import Tab from './Tab';
+import MenuBar from '../../components/MenuBar';
 
 const TabBar = ({state, navigation}) => {
   const {routes} = state;
@@ -24,9 +25,15 @@ const TabBar = ({state, navigation}) => {
     <View style={styles.wrapper}>
       <View style={styles.menuSection}>
         <Text style={styles.header}>Whatsapp</Text>
-        <TouchableOpacity>
-          <Icon name="ellipsis-v" size={18} color={'#FFF'} />
-        </TouchableOpacity>
+        <MenuBar
+          data={[
+            'New group',
+            'New broadcast',
+            'Linked devices',
+            'Starred messages',
+            'Settings',
+          ]}
+        />
       </View>
       <View style={styles.container}>
         <View>
