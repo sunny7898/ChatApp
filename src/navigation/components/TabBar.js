@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '500',
     color: '#e0f2f1',
+    marginLeft: 5
   },
   container: {
     width: getWidth(),

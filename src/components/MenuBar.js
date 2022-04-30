@@ -12,7 +12,7 @@ import {useNavigation} from '@react-navigation/native';
 export default MenuBar = ({data, onSelect}) => {
   const navigation = useNavigation();
   return (
-    <Menu style={{position: 'absolute', right: 10}}>
+    <Menu style={{position: 'absolute', right: 25}}>
       <MenuTrigger>
         <Icon name="ellipsis-v" color={'#FFF'} size={15} />
       </MenuTrigger>
